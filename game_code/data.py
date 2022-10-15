@@ -3,14 +3,19 @@ from question_model import Question
 
 
 def poll_api(num_qs, cat_id, skill):
+
     try:
         url = f"https://opentdb.com/api.php?amount={num_qs}&category={cat_id}&difficulty={skill}&type=boolean"
-        print(url)
+        #print(url)
         poll_data = requests.get(url=url)
         poll_data.raise_for_status()
+        #print(poll_data.json()["results"])
+        if poll_data.json()["results"] == []:
+            return backup_data
         return poll_data.json()["results"]
     except:
         return backup_data
+
 
 backup_data = [
     {"category": "Science: Computers", "type": "boolean", "difficulty": "medium",

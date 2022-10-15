@@ -14,8 +14,8 @@ FONT_NAME = "Courior"
 WHITE = "white"
 GREEN = "green"
 CLOCK_COLOR = "white"
-right_button_img = "images/true.png"
-left_button_img = "images/false.png"
+right_button_img = "game_code/images/true.png"
+left_button_img = "game_code/images/false.png"
 
 class QuizInterface():
 
